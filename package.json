@@ -1,0 +1,21 @@
+{
+  "name": "mindermengenzuschlag_app",
+  "version": "1.0.0",
+  "description": "Shopify App für Mindermengenzuschläge",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.0.3",
+    "session": "^0.1.0",
+    "mongoose": "^6.8.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "rate-limit": "^1.0.1",
+    "morgan": "^1.10.0",
+    "winston": "^3.8.1",
+    "@shopify/shopify-api": "^5.0.0"
+  }
+}
