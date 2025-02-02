@@ -132,6 +132,14 @@ app.post('/shopify/gdpr/shop-data-delete', async (req, res) => {
     res.status(200).send("Shop-Daten gelöscht");
 });
 
-app.listen(PORT, () => {
-  console.log(`Server läuft auf Port ${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server läuft auf Port ${PORT} mit HTTPS`);
 });
+
+app.use((req, res, next) => {
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+        return res.redirect(`https://${req.headers.host}${req.url}`);
+    }
+    next();
+});
+
